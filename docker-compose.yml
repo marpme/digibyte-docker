@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  digibyte:
+    build: .
+    volumes:
+        - ./data:/var/digibyte
+    environment:
+        - RPCUSER=marpme
+        - RPCPASSWORD=<changeme>
+    ports:
+      - '12024:12024' #P2P port
+      - '14022:14022' #RPC port
+    image: 'marpme/digibyte'
